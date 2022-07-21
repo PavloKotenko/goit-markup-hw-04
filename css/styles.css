@@ -93,8 +93,9 @@ a.current {
   display: flex;
   margin-left: auto;
 }
-.contact-list .list {
+.contacts-list .list {
   display: flex;
+  align-items: center;
 }
 .contacts-list .list:not(:last-child) {
   margin-right: 50px;
@@ -104,6 +105,8 @@ a.current {
   fill: currentColor;
 }
 .contact {
+  display: flex;
+  align-items: center;
   color: var(--second-text-color);
   font-weight: 500;
   font-size: 14px;
@@ -191,11 +194,8 @@ button:focus {
   background-color: var(--main-brand-color);
   color: #ffffff;
   cursor: pointer;
-  box-shadow: 0px 2px 2px 0px #0000001f;
-
-  box-shadow: 0px 1px 2px 0px #00000014;
-
-  box-shadow: 0px 3px 1px 0px #0000001a;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .project {
   display: block;
@@ -227,12 +227,10 @@ img {
   line-height: 1.87;
   letter-spacing: 0.03em;
 }
-.project-list .list:hover {
-  box-shadow: 0px 2px 2px 0px #0000001f;
-
-  box-shadow: 0px 1px 2px 0px #00000014;
-
-  box-shadow: 0px 3px 1px 0px #0000001a;
+.project-list a:hover,
+.project-list a:focus {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 /* main index */
 .hero-section {
@@ -260,7 +258,7 @@ img {
 /* overlay */
 .overlay {
   max-width: 1600px;
-  height: 600px;
+
   margin-left: auto;
   margin-right: auto;
   outline: 1px solid black;
@@ -335,13 +333,13 @@ img {
   background-image: url(../images/hw-4/astronaut.svg);
 } */
 .icon-box {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 120px;
   margin-bottom: 30px;
   background-color: #f5f4fa;
   border-radius: 4px;
-  padding-left: 100px;
-  padding-top: 25px;
 }
 
 .feature {
@@ -407,8 +405,7 @@ img {
 }
 .team-description ul {
   display: flex;
-
-  max-width: 206px;
+  justify-content: center;
   max-height: 44px;
   margin-top: 16px;
   margin-left: auto;
@@ -437,26 +434,32 @@ img {
   padding-top: 0;
   padding-bottom: 0;
   border-radius: 50%;
+  border-color: #ffffff;
   color: #ffffff;
+  align-items: center;
+  justify-content: center;
 }
 .link-icon:hover,
 .link-icon:focus {
   background-color: #188ce8;
   fill: #ffffff;
+  border-color: var(--main-brand-color);
 }
 
 .icon {
+  align-items: center;
+  justify-content: center;
   width: 20px;
   height: 20px;
   fill: #afb1b8;
-  margin-left: 12px;
-  margin-top: 12px;
 }
-.link-icon .icon:hover,
-.link-icon .icon:focus {
+.link-icon:hover .icon,
+.link-icon:focus .icon {
   fill: currentColor;
+  border-color: var(--main-brand-color);
   /* background-color: #188ce8; */
 }
+
 /* section clients */
 .clients ul {
   display: flex;
@@ -474,34 +477,33 @@ img {
   text-align: center;
   letter-spacing: 0.03em;
 }
-.client-list {
-  display: block;
-  padding-left: 32px;
-  padding-top: 16px;
+/* .client-list  */
+.client-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 92px;
   width: 170px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
 }
 
-.client-list a {
-  display: inline-block;
-}
-.client-list .client-icon {
+.client-icon {
   fill: #afb1b8;
 }
-.client-list:hover .client-icon,
-.client-list:focus .client-icon {
+.client-link:hover .client-icon,
+.client-link:focus .client-icon {
   fill: var(--main-brand-color);
 }
-.client-list:hover,
-.client-list:focus {
+.client-link:hover,
+.client-link:focus {
   border: 1px solid var(--main-brand-color);
 }
 
 /* footer */
 footer .container {
   display: flex;
+  align-items: baseline;
 }
 
 .footer-logo {
@@ -563,7 +565,8 @@ address .mail {
 .social .link-icon {
   background-color: rgba(255, 255, 255, 0.1);
 }
-.social .link-icon:hover {
+.social .link-icon:hover,
+.social .link-icon:focus {
   background-color: var(--main-brand-color);
 }
 .social .icon {
